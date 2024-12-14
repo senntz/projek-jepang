@@ -43,15 +43,19 @@
                     eyeiconpass.onclick = function(){
                         if(password.type == "password"){
                             password.type = "text";
+                            eyeiconpass.src = "../images/eye-open.png";
                         } else {
                             password.type = "password";
+                            eyeiconpass.src = "../images/eye-close.png";
                         }
                     }
                     eyeiconconf.onclick = function(){
                         if(conf.type == "password"){
                             conf.type = "text";
+                            eyeiconconf.src = "../images/eye-open.png";
                         } else {
                             conf.type = "password";
+                            eyeiconconf.src = "../images/eye-close.png";
                         }
                     }
                 </script>
