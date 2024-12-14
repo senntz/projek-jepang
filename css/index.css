@@ -1,0 +1,453 @@
+body {
+    font-family: montserrat;
+    display: flex;
+    margin: 0 auto;
+    min-height: 200vh;
+    flex-direction: column;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    height: 56px;
+    background-attachment: scroll;
+}
+
+#logo {
+    width: 169px;
+    height: 50px;
+    align-self: center;
+    margin-left: 48px;
+    background-image: url(../images/logo-putih.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+nav {
+    display: flex;
+    padding-left: 43px;
+    align-self: center;
+    gap: 30px;
+    color: white;
+    margin-bottom: 5px;
+    font-size: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+}
+
+#nav-home {
+    width: 54px;
+    border-bottom: 2px solid white;
+}
+
+.nav-btn {
+    flex-grow: 1;
+    display: flex;
+    gap: 13px;
+    align-self: center;
+    justify-content: flex-end;
+    padding-right: 46px;
+}
+
+.nav-btn a {
+    text-decoration: none;
+}
+
+#search {
+    align-self: center;
+    display: flex;
+    gap: 11px;
+    padding-right: 31px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#search img {
+    width: 19px;
+    height: 19px;
+}
+
+#search-field {
+    background-color: white;
+    border: transparent;
+    border-radius: 20px;
+    color: #D1A8A8;
+    font-size: 15px;
+    width: 150px;
+    height: 29px;
+    outline: transparent;
+}
+
+#profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.logout-logo {
+    background-image: url(../images/logout-red.png);
+    width: 20px;
+    height: 20px;
+}
+
+#logout-btn {
+    color: #B41313;
+    border: 2px solid #B41313;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 111px;
+    height: 39px;
+    border-radius: 20px;
+    gap: 2px;
+}
+
+#logout-btn:hover {
+    color: white;
+    border: 2px solid white;
+    background-color: rgba(166, 23, 23, 0.6);
+}
+
+#logout-btn:hover div {
+    background-image: url(../images/logout-logo-hover.png);
+}
+
+.daftar-logo {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/daftar-logo.png);
+}
+
+#daftar-btn {
+    color: white;
+    font-weight: bold;
+    border: 2px solid white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 111px;
+    height: 39px;
+    border-radius: 20px;
+    gap: 2px;
+}
+
+#daftar-btn:hover {
+    color: #A61717;
+    border: 2px solid #A61717;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+#daftar-btn:hover div {
+    background-image: url(../images/daftar-logo-hover.png);
+}
+
+.masuk-logo {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/masuk-logo.png);
+}
+
+#masuk-btn {
+    color: #B41313;
+    border: 2px solid #B41313;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 111px;
+    height: 39px;
+    border-radius: 20px;
+    gap: 2px;
+}
+
+#masuk-btn:hover {
+    color: white;
+    border: 2px solid white;
+    background-color: rgba(166, 23, 23, 0.6);
+}
+
+#masuk-btn:hover div {
+    background-image: url(../images/masuk-logo-hover.png);
+}
+
+.banner {
+    width: 100vw;
+    height: 514px;
+    background-image: url(../images/hokkaido.png);
+    background-size: cover;
+    background-attachment: bottom;
+    background-repeat: no-repeat;
+}
+
+.upper-banner {
+    height: 362px;
+}
+
+.upper-banner div {
+    padding-left: 80px;
+    padding-top: 155px;
+    width: 603px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+}
+
+.upper-banner p {
+    margin-bottom: 17px;
+    margin-top: 7px;
+}
+
+.upper-banner button {
+    width: 139px;
+    height: 45px;
+    border-radius: 20px;
+    border: transparent;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.upper-banner button:hover {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.upper-banner img {
+    width: 302px;
+}
+
+.bottom-banner {
+    height: 152px;
+    background-image: linear-gradient(transparent, #93110F);
+    padding-left: 85px;
+    display: flex;
+    
+}
+
+.city-slide {
+    padding-bottom: 94px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.city-slide span {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    
+}
+
+
+.jepang-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 485px;
+    width: 100%;
+    gap: 121px;
+}
+
+#japan-flag {
+    width: 493px;
+    height: 329px;
+}
+
+#japan-flag img {
+    width: 100%;
+    height: 100%;
+}
+
+#opening-jepang {
+    width: 413px;
+    height: 246px;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#opening-jepang span {
+    font-weight: bolder;
+    font-size: 51px;
+}
+
+.content-container {
+    width: 100%;
+    height: 1036px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-container span {
+    font-size: 42px;
+    font-weight: 700;
+    width: 349px;
+    height: 51px;
+    text-align: center;
+}
+
+#content {
+    width: 1113.79px;
+    height: 799.96px;
+    margin-top: 56px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 55px;
+}
+
+.content-wrap {
+    width: 334.6px;
+    height: 384.98px;
+    border-radius: 11.92px;
+    box-shadow: 0px 0px 11.08px 1.19px rgba(0,0,0,0.25);
+}
+
+.content-wrap img {
+    border-top-left-radius: 11.92px;
+    border-top-right-radius: 11.92px;
+}
+
+.content-name {
+    margin-left: 22.65px;
+    margin-top: 24.88px;
+    margin-right: 32.43px;
+}
+
+.content-name p {
+    font-size: 12.79px;
+    font-weight: normal;
+}
+
+.content-judul {
+    font-size: 23.84px;
+    font-weight: bold;
+    display: flex;
+    height: 29px;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5.96px;
+}
+
+.content-judul span {
+    font-size: 23.84px;
+    font-weight: bold;
+    text-align: left;
+    width: auto;
+    height: 29px;
+}
+
+.content-judul img {
+    width: 15px;
+    height: 15px;
+}
+
+.content-share {
+    height: 28.74px;
+    width: 88.62px;
+    display: flex;
+    gap: 7.23px;
+    margin-left: 226.92px;
+    margin-top: 40.70px;
+    align-items: center;
+}
+
+.share-icon, .like-icon {
+    width: 22.25px;
+    height: 22.25px;
+}
+
+.bookmark-icon {
+    width: 29.66px;
+    height: 28.74px;
+}
+
+.content-container a {
+    width: 255px;
+    margin-top: 56px;
+    color: black;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    text-align: center;
+    font-size: 29px;
+    font-weight: 700;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    text-decoration: none;
+}
+
+/* FOOTER */
+
+footer {
+    width: 100%;
+    height: 312px;
+    margin-top: 65px;
+    background-color: #2B2B2B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo-footer {
+    width: 250px;
+    height: 74px;
+    margin-top: 67px;
+}
+
+#menu-footer {
+    display: flex;
+    gap: 50px;
+    margin-top: 17px;
+}
+
+#menu-footer a {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#contact-footer {
+    margin-top: 17px;
+    display: flex;
+    gap: 15px;
+}
+
+#contact-footer img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+footer span {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    margin-top: 54px;
+}

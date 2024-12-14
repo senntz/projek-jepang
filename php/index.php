@@ -9,7 +9,7 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
 <head>
     <title>Homepage</title>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/index.css">
     <script>
         function cariFokus() {
             window.location.href = "?focus=true"
@@ -20,32 +20,7 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
     </script>
 </head>
 <body>
-    <div class="navbar">
-        <img id="logo" src="../images/Logo.png" alt="">
-        <div class="menu">
-            <p>Home</p>
-            <p>Destination</p>
-            <p>About</p>
-        </div>
-        <div class="nav-btn">
-            <div id="search">
-                <?php if ($isFocused): ?>
-                    <input type="text" id="search-field" onblur="gakFokus()">
-                <?php else: ?>
-                    <img src="../images/search.png" alt="">
-                    <span onclick="cariFokus()">Search</span>
-                <?php endif ?>
-            </div>
-            <a href="register.php" id="daftar-btn">
-                <div class="daftar-logo"></div>
-                <span>Daftar</span>
-            </a>
-            <a href="login.php" id="masuk-btn">
-                <div class="masuk-logo"></div>
-                <span>Masuk</span>
-            </a>
-        </div>
-    </div>
+    <?php include_once __dir__ . "\\navbar.php";?>
     <div class="banner">
         <div class="upper-banner">
             <div>
@@ -71,5 +46,102 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
             <p>Jepang (日本国, Nippon-koku) adalah sebuah negara kepulauan di Asia Timur. Letaknya di ujung barat Samudra Pasifik, di sebelah timur Laut Jepang, dan bersebelahan dengan Tiongkok, Korea Selatan, dan Rusia. </p>
         </div>
     </div>
+    <div class="content-container">
+        <span>TOP Destination</span>
+        <div id="content">
+            <div id="tokyo-dome" class="content-wrap">
+                <img src="..\\images\\tokyo-dome.png" alt="">
+                <div class="content-name">
+                    <div class="content-judul">
+                        <span>Tokyo Dome</span>    
+                        <img src="..\\images\\content-judul.png" alt="">
+                    </div>
+                    <p>Prasarana serba guna untuk segala cuaca</p>
+                </div>
+                <div class="content-share">
+                    <img src="..\\images\\bookmark-icon.png" alt="" class="bookmark-icon">
+                    <img src="..\\images\\like-icon.png" alt="" class="like-icon">
+                    <img src="..\\images\\share-icon.png" alt="" class="share-icon">
+                </div>
+            </div>
+            <div id="tsukiji-market" class="content-wrap">
+            <img src="..\\images\\tsukiji-market.png" alt="">
+                <div class="content-name">
+                    <div class="content-judul">
+                        <span>Tsukiji Outer Market</span>    
+                        <img src="..\\images\\content-judul.png" alt="">
+                    </div>
+                    <p>Pasar ikan segar dan olahannya</p>
+                </div>
+                <div class="content-share">
+                    <img src="..\\images\\bookmark-icon.png" alt="" class="bookmark-icon">
+                    <img src="..\\images\\like-icon.png" alt="" class="like-icon">
+                    <img src="..\\images\\share-icon.png" alt="" class="share-icon">
+                </div>
+            </div>
+            <div id="mt-fuji" class="content-wrap">
+            <img src="..\\images\\mt-fuji.png" alt="">
+                <div class="content-name">
+                    <div class="content-judul">
+                        <span>Mt. Fuji</span>    
+                        <img src="..\\images\\content-judul.png" alt="">
+                    </div>
+                    <p>Tempat paling ikonik di Jepang</p>
+                </div>
+                <div class="content-share">
+                    <img src="..\\images\\bookmark-icon.png" alt="" class="bookmark-icon">
+                    <img src="..\\images\\like-icon.png" alt="" class="like-icon">
+                    <img src="..\\images\\share-icon.png" alt="" class="share-icon">
+                </div>
+            </div>
+            <div id="tokyo-dome" class="content-wrap">
+            <img src="..\\images\\tokyo-dome.png" alt="">
+                <div class="content-name">
+                    <div class="content-judul">
+                        <span>Tokyo Dome</span>    
+                        <img src="..\\images\\content-judul.png" alt="">
+                    </div>
+                    <p>Prasarana serba guna untuk segala cuaca</p>
+                </div>
+                <div class="content-share">
+                    <img src="..\\images\\bookmark-icon.png" alt="" class="bookmark-icon">
+                    <img src="..\\images\\like-icon.png" alt="" class="like-icon">
+                    <img src="..\\images\\share-icon.png" alt="" class="share-icon">
+                </div>
+            </div>
+            <div id="tsukiji-market" class="content-wrap">
+            <img src="..\\images\\tsukiji-market.png" alt="">
+                <div class="content-name">
+                    <div class="content-judul">
+                        <span>Tsukiji Outer Market</span>    
+                        <img src="..\\images\\content-judul.png" alt="">
+                    </div>
+                    <p>Pasar ikan segar dan olahannya</p>
+                </div>
+                <div class="content-share">
+                    <img src="..\\images\\bookmark-icon.png" alt="" class="bookmark-icon">
+                    <img src="..\\images\\like-icon.png" alt="" class="like-icon">
+                    <img src="..\\images\\share-icon.png" alt="" class="share-icon">
+                </div>
+            </div>
+            <div id="mt-fuji" class="content-wrap">
+            <img src="..\\images\\mt-fuji.png" alt="">
+                <div class="content-name">
+                    <div class="content-judul">
+                        <span>Mt. Fuji</span>    
+                        <img src="..\\images\\content-judul.png" alt="">
+                    </div>
+                    <p>Tempat paling ikonik di Jepang</p>
+                </div>
+                <div class="content-share">
+                    <img src="..\\images\\bookmark-icon.png" alt="" class="bookmark-icon">
+                    <img src="..\\images\\like-icon.png" alt="" class="like-icon">
+                    <img src="..\\images\\share-icon.png" alt="" class="share-icon">
+                </div>
+            </div>
+        </div>
+        <a href="\\destination.php">See more</a>
+    </div>
+    <?php include_once __dir__ . "\\footer.php";?>
 </body>
 </html>

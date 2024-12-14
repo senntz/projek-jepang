@@ -6,7 +6,7 @@ $host_db    = "localhost";
 $user_db    = "root";
 $pass_db    = "";
 $nama_db    = "login";
-$koneksi    = mysqli_connect($host_db,$user_db,$pass_db,$nama_db);
+// $koneksi    = mysqli_connect($host_db,$user_db,$pass_db,$nama_db);
 //atur variabel
 $err        = "";
 $username   = "";
@@ -81,9 +81,10 @@ if(isset($_POST['login'])){
     <div class="container">
         <div class="left-side">
             <div class="left-content">
-                <img id="logo" src="../images/Logo.png" alt="">
-                <p>"Jika belum memiliki akun, ayo bergabung
-                    dan mulai jurnal anda."</p>
+                <img id="logo" src="..\\images\\logo-putih.png" alt="">
+                <p>"Jika belum memiliki akun,
+                     ayo bergabung dan mulai jurnal anda."</p>
+                <a href="\\register.php" id="daftar-btn">Daftar</a>
             </div>
         </div>
         <div class="right-side">
