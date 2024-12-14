@@ -64,5 +64,12 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
             </div>
         </div>
     </div>
+    <div class="jepang-container">
+        <div id="japan-flag"><img src="../images/japan-flag.png" alt=""></div>
+        <div id="opening-jepang">
+            <span>JEPANG</span>
+            <p>Jepang (日本国, Nippon-koku) adalah sebuah negara kepulauan di Asia Timur. Letaknya di ujung barat Samudra Pasifik, di sebelah timur Laut Jepang, dan bersebelahan dengan Tiongkok, Korea Selatan, dan Rusia. </p>
+        </div>
+    </div>
 </body>
 </html>
