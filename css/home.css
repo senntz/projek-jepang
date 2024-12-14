@@ -58,6 +58,7 @@ body {
     font-weight: bold;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 #search img {
@@ -66,11 +67,14 @@ body {
 }
 
 #search-field {
-    background-color: transparent;
+    background-color: white;
     border: transparent;
-    background-attachment: fixed;
+    border-radius: 20px;
+    color: #D1A8A8;
+    font-size: 15px;
     width: 150px;
     height: 29px;
+    outline: transparent;
 }
 
 .daftar-logo {

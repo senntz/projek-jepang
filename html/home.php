@@ -36,11 +36,11 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
                     <span onclick="cariFokus()">Search</span>
                 <?php endif ?>
             </div>
-            <a href="register.html" id="daftar-btn">
+            <a href="register.php" id="daftar-btn">
                 <div class="daftar-logo"></div>
                 <span>Daftar</span>
             </a>
-            <a href="login.html" id="masuk-btn">
+            <a href="login.php" id="masuk-btn">
                 <div class="masuk-logo"></div>
                 <span>Masuk</span>
             </a>

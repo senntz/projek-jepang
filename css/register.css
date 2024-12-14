@@ -112,6 +112,10 @@ body {
     padding-left: 3px;
 }
 
+#eye-conf, #eye-pass {
+    cursor: pointer;
+}
+
 .below {
     display: flex;
     justify-content: space-evenly;
