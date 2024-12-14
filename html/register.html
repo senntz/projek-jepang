@@ -7,13 +7,6 @@
 </head>
 <body>
     <div class="container">
-        <div class="left-side">
-            <div class="left-content">
-                <img id="logo" src="../images/Logo.png" alt="">
-                <p>"Jika belum memiliki akun, ayo bergabung
-                    dan mulai jurnal anda."</p>
-            </div>
-        </div>
         <div class="right-side">
             <div class="reg-div">
                 <h1>REGISTER</h1>
@@ -27,11 +20,13 @@
                         <img id="pass-logo" src="../images/pass-logo.png" alt="">
                         <img id="line-pass" class="line" src="../images/line-login.png" alt="">
                         <input id="pass-input" type="password" id="password" placeholder="Enter your password" required>
+                        <img id="eye-pass" class="eye-close" src="../images/eye-close.png" alt="">
                     </div>
                     <div class="input-group">
                         <img id="conf-logo" src="../images/pass-logo.png" alt="">
                         <img id="line-conf" class="line" src="../images/line-login.png" alt="">
                         <input id="conf-input" type="password" id="confirm" placeholder="Re-enter your password" required>
+                        <img id="eye-conf" class="eye-close" src="../images/eye-close.png" alt="">
                     </div>
                     <div class="below">
                         <p>Ingatkan saya</p>
@@ -39,6 +34,34 @@
                     </div>
                     <input type="submit" class="reg-button" value="Daftar">
                 </form>
+                <script>
+                    let eyeiconpass = document.getElementById("eye-pass");
+                    let eyeiconconf = document.getElementById("eye-conf");
+                    let password = document.getElementById("pass-input");
+                    let conf = document.getElementById("conf-input");
+
+                    eyeiconpass.onclick = function(){
+                        if(password.type == "password"){
+                            password.type = "text";
+                        } else {
+                            password.type = "password";
+                        }
+                    }
+                    eyeiconconf.onclick = function(){
+                        if(conf.type == "password"){
+                            conf.type = "text";
+                        } else {
+                            conf.type = "password";
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="left-side">
+            <div class="left-content">
+                <img id="logo" src="../images/Logo.png" alt="">
+                <p>"Jika belum memiliki akun, ayo bergabung
+                    dan mulai jurnal anda."</p>
             </div>
         </div>
     </div>

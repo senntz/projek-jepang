@@ -27,6 +27,19 @@
                         <img id="pass-logo" src="../images/pass-logo.png" alt="">
                         <img id="line-pass" class="line" src="../images/line-login.png" alt="">
                         <input id="pass-input" type="password" id="password" placeholder="Enter your password" required>
+                        <img id="eye-close" src="../images/eye-close.png" alt="">
+                        <script>
+                            let eyeicon = document.getElementById("eye-close");
+                            let password = document.getElementById("pass-input");
+
+                            eyeicon.onclick = function(){
+                                if(password.type == "password"){
+                                    password.type = "text";
+                                } else {
+                                    password.type = "password";
+                                }
+                            }
+                        </script>
                     </div>
                     <div class="below">
                         <p>Ingatkan saya</p>
