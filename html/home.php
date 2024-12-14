@@ -1,3 +1,9 @@
+<?php
+
+$isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +11,11 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="../css/home.css">
     <script>
-        function searchfield() {
-            let search = document.getElementById("search");
+        function cariFokus() {
+            window.location.href = "?focus=true"
+        }
+        function gakFokus() {
+            window.location.href = "?focus=false"
         }
     </script>
 </head>
@@ -20,9 +29,12 @@
         </div>
         <div class="nav-btn">
             <div id="search">
-                    <input type="text" id="search-field">
+                <?php if ($isFocused): ?>
+                    <input type="text" id="search-field" onblur="gakFokus()">
+                <?php else: ?>
                     <img src="../images/search.png" alt="">
-                    <span>Search</span>
+                    <span onclick="cariFokus()">Search</span>
+                <?php endif ?>
             </div>
             <a href="register.html" id="daftar-btn">
                 <div class="daftar-logo"></div>

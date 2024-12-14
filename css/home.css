@@ -37,7 +37,6 @@ body {
 
 .nav-btn {
     flex-grow: 1;
-    /* padding-left: 419px; */
     display: flex;
     gap: 13px;
     align-self: center;
@@ -45,15 +44,33 @@ body {
     padding-right: 46px;
 }
 
-.nav-btn button {
+.nav-btn a {
+    text-decoration: none;
+}
+
+#search {
+    align-self: center;
     display: flex;
-    align-items: center;
+    gap: 11px;
+    padding-right: 31px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
     justify-content: center;
-    gap: 2px;
-    width: 111px;
-    height: 39px;
+    align-items: center;
+}
+
+#search img {
+    width: 19px;
+    height: 19px;
+}
+
+#search-field {
     background-color: transparent;
-    border-radius: 20px;
+    border: transparent;
+    background-attachment: fixed;
+    width: 150px;
+    height: 29px;
 }
 
 .daftar-logo {
@@ -66,6 +83,13 @@ body {
     color: white;
     font-weight: bold;
     border: 2px solid white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 111px;
+    height: 39px;
+    border-radius: 20px;
 }
 
 #daftar-btn:hover {
@@ -88,6 +112,13 @@ body {
     color: #B41313;
     border: 2px solid #B41313;
     font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 111px;
+    height: 39px;
+    border-radius: 20px;
 }
 
 #masuk-btn:hover {
@@ -101,10 +132,70 @@ body {
 }
 
 .banner {
-    width: 100%;
+    width: 100vw;
     height: 514px;
     background-image: url(../images/hokkaido.png);
-    background-size: contain;
-    background-attachment: fixed;
+    background-size: cover;
+    background-attachment: bottom;
     background-repeat: no-repeat;
+}
+
+.upper-banner {
+    height: 362px;
+}
+
+.upper-banner div {
+    padding-left: 80px;
+    padding-top: 155px;
+    width: 603px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+}
+
+.upper-banner p {
+    margin-bottom: 17px;
+    margin-top: 7px;
+}
+
+.upper-banner button {
+    width: 139px;
+    height: 45px;
+    border-radius: 20px;
+    border: transparent;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.upper-banner button:hover {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.upper-banner img {
+    width: 302px;
+}
+
+.bottom-banner {
+    height: 152px;
+    background-image: linear-gradient(transparent, #93110F);
+    padding-left: 85px;
+    display: flex;
+    
+}
+
+.city-slide {
+    padding-bottom: 94px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.city-slide span {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    
 }
