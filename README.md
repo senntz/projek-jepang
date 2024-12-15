@@ -31,7 +31,7 @@ Untuk melihat demo aplikasi, Anda dapat mengunjungi
 ## Cara Instal ⬇️
 1. Clone repositori ini ke komputer lokal Anda:
    ```bash
-  https://github.com/senntz/projek-jepang.git
+   git clone https://github.com/senntz/projek-jepang.git
    ```
 2. Pastikan XAMPP atau Laragon telah terinstal.
 3. Pindahkan folder project ini ke dalam direktori `htdocs`.
@@ -43,7 +43,6 @@ Untuk melihat demo aplikasi, Anda dapat mengunjungi
 6. Buka browser dan akses aplikasi melalui URL:
    ```
    http://localhost/projek-jepang
-   ```
 
 ## Kontributor  👨‍👨‍👧
 1. Imedia Sholem Shoukat (H1D023088)
