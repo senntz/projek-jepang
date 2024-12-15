@@ -25,7 +25,7 @@ all-JAPAN adalah platform informasi wisata yang dirancang untuk membantu wisataw
 
 ## Prototype Aplikasi 📽 
 Untuk melihat prototype aplikasi, Anda dapat mengunjungi 
-[[link demo](https://www.figma.com/proto/5mSVAGWloP1TDFiw4ezn9m/JEPANGGGGGGG?page-id=38%3A148&node-id=64-643&p=f&viewport=246%2C216%2C0.05&t=pxFkwWK2YfJUjQ4Q-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=64%3A643)]
+[[prototype all-JAPAN](https://www.figma.com/proto/5mSVAGWloP1TDFiw4ezn9m/JEPANGGGGGGG?page-id=38%3A148&node-id=64-643&p=f&viewport=246%2C216%2C0.05&t=pxFkwWK2YfJUjQ4Q-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=64%3A643)]
 
 ## Demo Aplikasi 📽 
 Untuk melihat demo aplikasi, Anda dapat mengunjungi 
