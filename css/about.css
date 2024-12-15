@@ -1,0 +1,158 @@
+
+* {
+    font-family: 'montserrat',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* About Section */
+  .about {
+    text-align: center;
+    padding: 13vh 0 4vh 0;
+  }
+  .about h1{
+    font-size: 80px;
+    font-weight: bold;
+    margin: -3vh;
+  }
+  .subtitle {
+    color: #e63946;
+    font-weight: bold;
+    font-size: 33px;
+  }
+  
+  /* Intro Section */
+  .intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 63px;
+    padding-top: 63px;
+    background-image: url('../images/bg-jepang-about.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: #fff;
+    position: relative; 
+    /* z-index: 1; */
+  }
+  
+  .intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* z-index: -1;  */
+  }
+  
+  .intro .content {
+    max-width: 700px;
+    z-index: 2;
+  }
+  
+  .intro h2 {
+    margin-bottom: 20px;
+    font-size: 55px;
+  }
+  
+  .intro p {
+    font-size: 24px;
+    line-height: 1.8;
+    font-weight: lighter;
+  }
+  merah{
+    color: #e63946;
+  }
+  tebel{
+    font-weight: bold;
+  }
+  /* FAQ Section */
+  /* Container Utama */
+.faq {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #fff; 
+  }
+  
+  .faq-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px; 
+  }
+  
+  /* Title */
+  .faq-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    flex: 1;
+    align-content: center;
+  }
+  
+  /* Content FAQ */
+  .faq-content {
+    flex: 2; /* Ukuran kolom kanan */
+  }
+  
+  .faq-item {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc; 
+  }
+  
+  .faq-item .question {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .faq-item .answer {
+    font-size: 17px;
+    color: #555; 
+    line-height: 1.6;
+  }
+  
+  
+  /* Team Section */
+  .team {
+    text-align: center;
+    padding: 10px 20px 10vh;
+  }
+  .team h2{
+    margin-bottom: 3vh;
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+  }
+  
+  .member img {
+    width: 150px;
+    border-radius: 50%;
+  }
+  
+  .member h3 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  .member p {
+    color: #777;
+  }
+  
+
+  
