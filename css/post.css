@@ -8,8 +8,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Navbar */
-
 #navbar {
     position: relative;
 }
@@ -199,90 +197,187 @@ nav a {
     background-image: url(../images/masuk-logo-hover.png);
 }
 
-/* Judul */
+/* Over IMG */
 
-#judul-container {
-    width: 451.13px;
-    height: 167px;
-    align-self: center;
-    margin-top: 114px;
+.over-img {
+    width: fit-content;
+    height: 207.74px;
     display: flex;
     flex-direction: column;
+    margin-left: 49px;
+    margin-top: 89px;
+}
+
+.over-img a {
+    text-decoration: none;
+    font-size: 21px;
+    font-weight: 400;
+    color: black;
+}
+
+.over-img span {
+    font-size: 55px;
+    font-weight: bold;
+    margin-top: 34px;
+    margin-bottom: 0px;
+}
+
+.over-img p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.over-img div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#post-profile img {
+    width: 30px;
+    height: 30px;
+}
+
+#post-profile div {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 203px;
+    height: 37px;
     justify-content: center;
 }
 
-#judul {
-    width: 100%;
-    text-align: center;
-    font-size: 100px;
-    font-weight: 700;
-    border-bottom: 5px solid black;
+#post-profile p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6C6C6C;
 }
 
-#keterangan {
-    width: 100%;
-    text-align: center;
-    color: #B41313;
-    font-size: 33px;
-    font-weight: 700;
+#post-share {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 17px;
+    margin-left: 940px;
 }
 
-/* Filter */
+.bookmark-icon {
+    width: 41.02px;
+    height: 39.74px;
+}
 
-.filter {
+.like-icon, .share-icon {
+    width: 30.76px;
+    height: 30.76px;
+}
+
+/* Post IMG */
+
+.post-image {
+    height: 475px;
+}
+
+/* Below IMG */
+
+#below-img {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    margin-top: 132px;
-    margin-left: 64px;
+    width: 1122px;
+    height: 538px;
+    margin-top: 21px;
+    margin-left: 107px;
 }
 
-.btn-filter {
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 30px;
+#post-isi {
+    margin-top: 33px;
+    width: 612px;
+    height: 426px;
+    display: flex;
+    flex-direction: column;
+}
+
+#post-isi span {
+    font-size: 32px;
+    font-weight: 700;
     color: black;
-    font-size: 25px;
-    font-weight: 500;
-    height: 54px;
-    padding: 15px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    cursor: pointer;
+    margin: 0px;
 }
 
-.btn-nyala {
-    box-shadow: 0px 0px 4px 1px rgba(0, 70, 135, 1);
-    border: 1px solid rgba(0, 70, 135, 1);
-    border-radius: 30px;
-    font-size: 25px;
-    color: #004687;
-    font-weight: 500;
+#post-isi p {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px;
+    margin-top: 21px;
+}
+
+/* Galeri */
+
+#galeri {
+    margin-top: 38px;
+    height: 354px;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+#galeri span {
+    font-size: 32px;
+    font-weight: 700;
     text-align: center;
-    text-shadow: 0px 0px 4px rgba(0, 70, 135, 0.25);
-    height: 54px;
-    padding: 15px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    cursor: pointer;
+    margin-bottom: 37px;
+}
+
+#galeri-container {
+    position: relative;
+    display: flex;
+    gap: 291px;
+    height: 298px;
+    align-items: center;
+}
+
+#galeri-center {
+    position: absolute;
+    left: 310px;
+}
+
+#recomendation {
+    width: 100%;
+    height: 528.98px;
+    background-color: #FEF0F2;
+    margin-top: 30px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#recomendation span {
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 42px;
+    width: 1114px;
+    height: 35px;
+}
+
+#recomend-field {
+    margin-top: 25px;
+    width: 1114px;
+    height: 384.98px;
+    display: flex;
+    gap: 58px;
 }
 
 /* Content */
-
-.content-container {
-    margin-left: 64px;
-    margin-top: 41px;
-    width: 1121.79px;
-    height: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 40px;
-    column-gap: 58px;
-}
 
 .content-wrap {
     width: 334.6px;
     height: 384.98px;
     border-radius: 11.92px;
+    background-color: white;
     box-shadow: 0px 0px 11.08px 1.19px rgba(0,0,0,0.25);
 }
 
@@ -303,7 +398,7 @@ nav a {
 }
 
 .content-judul {
-    font-weight: bold;
+    font-weight: 700;
     display: flex;
     height: 29px;
     align-items: center;
@@ -313,7 +408,7 @@ nav a {
 
 .content-judul a {
     font-size: 23.84px;
-    font-weight: bold;
+    font-weight: 700;
     text-align: left;
     width: auto;
     height: 29px;
@@ -351,7 +446,7 @@ nav a {
 footer {
     width: 100%;
     height: 312px;
-    margin-top: 118.05px;
+    margin-top: 0px;
     background-color: #2B2B2B;
     display: flex;
     flex-direction: column;

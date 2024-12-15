@@ -1,0 +1,16 @@
+body {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+img {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    transition: left 1s;
+}
+
+img:hover {
+    left: 150px;
+}

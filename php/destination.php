@@ -36,7 +36,7 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
             <img src="..\\images\\tokyo-dome.png" alt="">   <!--  ini gambar tempat  -->
             <div class="content-name">
                 <div class="content-judul">
-                    <span>Tokyo Dome</span>  <!--  ini nama judul / nama tempat  -->
+                    <a href="post.php">Tokyo Dome</a>  <!--  ini nama judul / nama tempat  -->
                     <img src="..\\images\\content-judul.png" alt="">
                 </div>
                 <p>Prasarana serba guna untuk segala cuaca</p>  <!--  ini keterangan tempat  -->
