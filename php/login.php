@@ -6,7 +6,7 @@ $host_db    = "localhost";
 $user_db    = "root";
 $pass_db    = "";
 $nama_db    = "login";
-// $koneksi    = mysqli_connect($host_db,$user_db,$pass_db,$nama_db);
+$koneksi    = mysqli_connect($host_db,$user_db,$pass_db,$nama_db);
 //atur variabel
 $err        = "";
 $username   = "";
@@ -26,7 +26,7 @@ if(isset($_COOKIE['cookie_username'])){
 }
 
 if(isset($_SESSION['session_username'])){
-    header("location:home.php"); // Ganti ke home.php
+    header("location:index.php"); 
     exit();
 }
 
@@ -64,7 +64,7 @@ if(isset($_POST['login'])){
                 $cookie_time = time() + (60 * 60 * 24 * 30);
                 setcookie($cookie_name, $cookie_value, $cookie_time, "/");
             }
-            header("location:home.php");
+            header("location:index.php");
             exit();
         }
     }
