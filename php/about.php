@@ -67,17 +67,17 @@
     <h2>MEET OUR TEAM</h2>
     <div class="team-members">
       <div class="member">
-        <img src="images/simon.pict.png" alt="Simon Dimas Pramudya">
+        <img src="../images/simon.pict.png" alt="Simon Dimas Pramudya">
         <h3>Simon Dimas Pramudya</h3>
         <p>Backend Developer</p>
       </div>
       <div class="member">
-        <img src="images/fikri-pict.png" alt="Muhammad Fikri Firmansyah">
+        <img src="../images/fikri-pict.png" alt="Muhammad Fikri Firmansyah">
         <h3>Muhammad Fikri Firmansyah</h3>
         <p>Frontend Developer</p>
       </div>
       <div class="member">
-        <img src="images/ime-pict.png" alt="Imedia Sholem Shoukat">
+        <img src="../images/ime-pict.png" alt="Imedia Sholem Shoukat">
         <h3>Imedia Sholem Shoukat</h3>
         <p>UI & UX Designer</p>
       </div>
