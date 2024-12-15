@@ -1,3 +1,3 @@
 <php?
-$koneksi= mysqli_connect("localhost","root","","login_login") or die("gagal koneksi");
+$koneksi= mysqli_connect('localhost','root','','login') or die('connection failed');
 ?>
