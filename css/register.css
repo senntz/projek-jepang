@@ -20,34 +20,62 @@ body {
     background-position: center;
 }
 
-.left-side {
+.right-side {
     width: 50%;
     display: flex;
     justify-content: center;
-    align-content: center;
+    border-top-right-radius: 43.8px;
+    border-bottom-right-radius: 43.8px;
+    background-color: rgba(147, 16, 15, 0.35);
 }
 
-.left-content {
-    background-color: rgba(147, 16, 15, 0.35);
-    padding: 20px;
-    width: 100%;
+.right-content {
+    width: 448px;
+    height: 253.51px;
     display: flex;
-    gap: 30px;
     flex-direction: column;
-    justify-content: center;
+    align-self: center;
+    align-items: center;
     color: #fff;
 }
 
-.left-side p {
-    width: 350px;
+#logo {
+    width: 292.41px;
+    height: 86.51px;
+}
+
+.right-side p {
+    width: 100%;
     height: 36px;
     font-size: 15px;
     text-align: center;
-    align-self: center;
-    padding-top: 100px;
+    margin-top: 32px;
+    flex-grow: 1;
 }
 
-.right-side {
+#masuk-btn {
+    border: 2px solid white;
+    text-decoration: none;
+    width: 206px;
+    height: 49px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    justify-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transition: width 0.1s, height 0.1s;
+}
+
+#masuk-btn:hover {
+    width: 226px;
+    height: 55px;
+}
+
+.left-side {
     width: 50%;
     /* padding: 40px; */
     align-content: center;
@@ -145,10 +173,4 @@ body {
 
 .reg-button:hover {
     background-color: #8C0000;
-}
-
-#logo {
-    width: 292px;
-    height: 86px;
-    align-self: center;
 }

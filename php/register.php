@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="right-side">
+        <div class="left-side">
             <div class="reg-div">
                 <h1>REGISTER</h1>
                 <form class="form-reg" action="POST">
@@ -65,11 +65,11 @@
                 </script>
             </div>
         </div>
-        <div class="left-side">
-            <div class="left-content">
-                <img id="logo" src="../images/Logo.png" alt="">
-                <p>"Jika belum memiliki akun, ayo bergabung
-                    dan mulai jurnal anda."</p>
+        <div class="right-side">
+            <div class="right-content">
+                <img id="logo" src="..\\images\\logo-putih.png" alt="">
+                <p>"Jika anda sudah memiliki akun, masuk dan nikmati fitur fitur yang kami sediakan"</p>
+                <a href="\\login.php" id="masuk-btn">Masuk</a>
             </div>
         </div>
     </div>

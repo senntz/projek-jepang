@@ -21,7 +21,6 @@ body {
     width: 50%;
     display: flex;
     justify-content: center;
-    background-color: transparent;
     border-top-left-radius: 43.8px;
     border-bottom-left-radius: 43.8px;
     background-color: rgba(147, 16, 15, 0.35);
