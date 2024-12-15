@@ -19,11 +19,6 @@ $username = "";
 $password = "";
 $confirm_password = "";
 
-if (isset($_SESSION['id'])) {
-    header("Location: ../html/home.php");
-    exit();
-} 
-
 if (isset($_POST['submit'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);

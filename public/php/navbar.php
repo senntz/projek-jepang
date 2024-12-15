@@ -8,7 +8,7 @@ $isLoggedIn = isset($_SESSION["id"]); // Assuming "id" is set when the user logs
 <header>
     <div id="logo"></div>
     <nav id="navigasi">
-        <a href="index.php" id="nav-home">Home</a>
+        <a href="home.php" id="nav-home">Home</a>
         <a href="destination.php" id="nav-dest">Destination</a>
         <a href="about.php" id="nav-abt">About</a>
     </nav>

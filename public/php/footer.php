@@ -5,9 +5,9 @@
 <footer>
     <img src="..\\images\\logo-putih.png" alt="" id="logo-footer">
     <div id="menu-footer">
-        <a href="\\index.php">Home</a>
-        <a href="\\destination.php">Destination</a>
-        <a href="\\about.php">About</a>
+        <a href="home.php">Home</a>
+        <a href="destination.php">Destination</a>
+        <a href="about.php">About</a>
     </div>
     <div id="contact-footer">
         <img src="..\\images\\footer-twit.png" alt="" id="contfoot-twit">
