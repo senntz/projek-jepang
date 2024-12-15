@@ -1,6 +1,6 @@
 <?php
     if(isset($_SESSION["id"])){
-        
+
     }
 ?>
 
@@ -15,8 +15,8 @@
         <!-- ini buat bek en -->
             <div id="search">
                 <?php if ($isFocused): ?>
-                    <form action="" method="POST">
-                        <input type="text" id="search-field" onblur="gakFokus()">
+                    <form action="pencarian.php" method="POST">
+                        <input type="text" id="search-field" name="keyword" onblur="gakFokus()">
                     </form>
                 <?php else: ?>
                     <div id="search-icon" onclick="cariFokus()"></div>

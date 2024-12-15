@@ -1,8 +1,8 @@
 <?php
 
 $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
-
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -18,6 +18,7 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
         }
         function gakFokus() {
             window.location.href = "?focus=false"
+            window.location.href = "pencarian.php"
         }
     </script>
 </head>
