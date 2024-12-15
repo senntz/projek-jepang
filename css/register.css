@@ -93,11 +93,11 @@ body {
     justify-content: center;
 }
 
-.reg-div h1 {
+#judul {
     font-size: 32px;
     margin-bottom: 20px;
     text-align: center;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .form-reg {

@@ -74,7 +74,9 @@ if(isset($_POST['login'])){
 <html>
 <head>
     <title>Login Page</title>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
@@ -84,12 +86,12 @@ if(isset($_POST['login'])){
                 <img id="logo" src="..\\images\\logo-putih.png" alt="">
                 <p>"Jika belum memiliki akun,
                      ayo bergabung dan mulai jurnal anda."</p>
-                <a href="\\register.php" id="daftar-btn">Daftar</a>
+                <a href="register.php" id="daftar-btn">Daftar</a>
             </div>
         </div>
         <div class="right-side">
             <div class="login-div">
-                <h2>LOGIN</h2>
+                <span id="judul">LOGIN</span>
                 <form class="form-login" method="POST">
                     <div class="input-group">
                         <img id="user-logo" src="../images/profil-logo.png" alt="">

@@ -17,7 +17,7 @@
                         <input type="text" id="search-field" onblur="gakFokus()">
                     </form>
                 <?php else: ?>
-                    <img src="../images/search.png" alt="">
+                    <div id="search-icon" onclick="cariFokus()"></div>
                     <span onclick="cariFokus()">Search</span>
                 <?php endif ?>
             </div>

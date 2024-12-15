@@ -2,7 +2,7 @@ body {
     font-family: montserrat;
     display: flex;
     margin: 0 auto;
-    min-height: 200vh;
+    min-height: 100vh;
     flex-direction: column;
     background-color: #f4f4f4;
     overflow-x: hidden;
@@ -26,7 +26,7 @@ header {
     height: 50px;
     align-self: center;
     margin-left: 48px;
-    background-image: url(../images/logo-putih.png);
+    background-image: url(../images/logo-hitam.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -36,14 +36,14 @@ nav {
     padding-left: 43px;
     align-self: center;
     gap: 30px;
-    color: white;
     margin-bottom: 5px;
     font-size: 15px;
+    margin-bottom: 0px;
 }
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-weight: bold;
     cursor: pointer;
     padding-left: 4px;
@@ -51,9 +51,8 @@ nav a {
     text-align: center;
 }
 
-#nav-home {
-    width: 54px;
-    border-bottom: 2px solid white;
+#nav-dest {
+    border-bottom: 2px solid black;
 }
 
 .nav-btn {
@@ -74,7 +73,7 @@ nav a {
     display: flex;
     gap: 11px;
     padding-right: 31px;
-    color: white;
+    color: black;
     font-size: 15px;
     font-weight: bold;
     justify-content: center;
@@ -85,7 +84,7 @@ nav a {
 #search-icon {
     width: 19px;
     height: 19px;
-    background-image: url(../images/search.png);
+    background-image: url(../images/search-hitam.png);
 }
 
 #search-field {
@@ -103,20 +102,20 @@ nav a {
     display: flex;
     align-items: center;
     gap: 9px;
-    color: white;
-    font-weight: bold;
+    color: black;
+    font-weight: 700;
     font-size: 15px;
 }
 
 .logout-logo {
-    background-image: url(../images/logout-red.png);
+    background-image: url(../images/logout-hitam.png);
     width: 20px;
     height: 20px;
 }
 
 #logout-btn {
-    color: #B41313;
-    border: 2px solid #B41313;
+    color: black;
+    border: 2px solid black;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -131,7 +130,7 @@ nav a {
 #logout-btn:hover {
     color: white;
     border: 2px solid white;
-    background-color: rgba(166, 23, 23, 0.6);
+    background-color: black;
 }
 
 #logout-btn:hover div {
@@ -141,13 +140,13 @@ nav a {
 .daftar-logo {
     width: 20px;
     height: 20px;
-    background-image: url(../images/daftar-logo.png);
+    background-image: url(../images/daftar-logo-hitam.png);
 }
 
 #daftar-btn {
-    color: white;
+    color: black;
     font-weight: bold;
-    border: 2px solid white;
+    border: 2px solid black;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -159,13 +158,13 @@ nav a {
 }
 
 #daftar-btn:hover {
-    color: #A61717;
-    border: 2px solid #A61717;
-    background-color: rgba(255, 255, 255, 0.6);
+    color: white;
+    border: 2px solid white;
+    background-color: black;
 }
 
 #daftar-btn:hover div {
-    background-image: url(../images/daftar-logo-hover.png);
+    background-image: url(../images/daftar-logo.png);
 }
 
 .masuk-logo {
@@ -198,138 +197,84 @@ nav a {
     background-image: url(../images/masuk-logo-hover.png);
 }
 
-/* Banner */
+/* Judul */
 
-.banner {
-    width: 100vw;
-    height: 514px;
-    background-image: url(../images/hokkaido.png);
-    background-size: cover;
-    background-attachment: bottom;
-    background-repeat: no-repeat;
-}
-
-.upper-banner {
-    height: 362px;
-}
-
-.upper-banner div {
-    padding-left: 80px;
-    padding-top: 155px;
-    width: 603px;
-    display: flex;
-    flex-direction: column;
-    color: white;
-    font-size: 20px;
-}
-
-.upper-banner p {
-    margin-bottom: 17px;
-    margin-top: 7px;
-}
-
-.upper-banner button {
-    width: 139px;
-    height: 45px;
-    border-radius: 20px;
-    border: transparent;
-    font-weight: bold;
-    font-size: 17px;
-}
-
-.upper-banner button:hover {
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
-}
-
-.upper-banner img {
-    width: 302px;
-}
-
-.bottom-banner {
-    height: 152px;
-    background-image: linear-gradient(transparent, #93110F);
-    padding-left: 85px;
-    display: flex;
-    
-}
-
-.city-slide {
-    padding-bottom: 94px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.city-slide span {
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
-    
-}
-
-/* Opening */
-
-.jepang-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 485px;
-    width: 100%;
-    gap: 121px;
-}
-
-#japan-flag {
-    width: 493px;
-    height: 329px;
-}
-
-#japan-flag img {
-    width: 100%;
-    height: 100%;
-}
-
-#opening-jepang {
-    width: 413px;
-    height: 246px;
-    font-size: 17px;
+#judul-container {
+    width: 451.13px;
+    height: 167px;
+    align-self: center;
+    margin-top: 114px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-#opening-jepang span {
-    font-weight: bolder;
-    font-size: 51px;
+#judul {
+    width: 100%;
+    text-align: center;
+    font-size: 100px;
+    font-weight: 700;
+    border-bottom: 5px solid black;
+}
+
+#keterangan {
+    width: 100%;
+    text-align: center;
+    color: #B41313;
+    font-size: 33px;
+    font-weight: 700;
+}
+
+/* Filter */
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 132px;
+    margin-left: 64px;
+}
+
+.btn-filter {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+    height: 54px;
+    padding: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    cursor: pointer;
+}
+
+.btn-nyala {
+    box-shadow: 0px 0px 4px 1px rgba(0, 70, 135, 1);
+    border: 1px solid rgba(0, 70, 135, 1);
+    border-radius: 30px;
+    font-size: 25px;
+    color: #004687;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 0px 0px 4px rgba(0, 70, 135, 0.25);
+    height: 54px;
+    padding: 15px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    cursor: pointer;
 }
 
 /* Content */
 
 .content-container {
-    width: 100%;
-    height: 1036px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.content-container span {
-    font-size: 42px;
-    font-weight: 700;
-    width: 349px;
-    height: 51px;
-    text-align: center;
-}
-
-#content {
-    width: 1113.79px;
-    height: 799.96px;
-    margin-top: 56px;
+    margin-left: 64px;
+    margin-top: 41px;
+    width: 1121.79px;
+    height: fit-content;
     display: flex;
     flex-wrap: wrap;
-    row-gap: 30px;
-    column-gap: 55px;
+    row-gap: 40px;
+    column-gap: 58px;
 }
 
 .content-wrap {
@@ -356,7 +301,6 @@ nav a {
 }
 
 .content-judul {
-    font-size: 23.84px;
     font-weight: bold;
     display: flex;
     height: 29px;
@@ -398,26 +342,12 @@ nav a {
     height: 28.74px;
 }
 
-.content-container a {
-    width: 255px;
-    margin-top: 56px;
-    color: black;
-    border-radius: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.50);
-    text-align: center;
-    font-size: 29px;
-    font-weight: 700;
-    padding-top: 19px;
-    padding-bottom: 19px;
-    text-decoration: none;
-}
-
 /* FOOTER */
 
 footer {
     width: 100%;
     height: 312px;
-    margin-top: 65px;
+    margin-top: 118.05px;
     background-color: #2B2B2B;
     display: flex;
     flex-direction: column;
