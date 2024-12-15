@@ -1,3 +1,9 @@
+<?php
+
+$isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +11,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="../css/about.css">
 </head>
 <body>
   <!-- Navbar -->
-  
-
+  <div id="navbar">
+    <?php include_once __dir__ . "/navbar.php";?>
+  </div>
   <!-- About Us Section -->
   <section class="about">
     <h1>About Us</h1>
-    <img src="images/line.png">
+    <img src="../images/line.png">
     <p class="subtitle">Kenali Kami</p>
   </section>
 
@@ -67,24 +74,32 @@
     <h2>MEET OUR TEAM</h2>
     <div class="team-members">
       <div class="member">
-        <img src="images/simon.pict.png" alt="Simon Dimas Pramudya">
+        <img src="../images/simon.pict.png" alt="Simon Dimas Pramudya">
         <h3>Simon Dimas Pramudya</h3>
         <p>Backend Developer</p>
       </div>
       <div class="member">
-        <img src="images/fikri-pict.png" alt="Muhammad Fikri Firmansyah">
+        <img src="../images/fikri-pict.png" alt="Muhammad Fikri Firmansyah">
         <h3>Muhammad Fikri Firmansyah</h3>
         <p>Frontend Developer</p>
       </div>
       <div class="member">
-        <img src="images/ime-pict.png" alt="Imedia Sholem Shoukat">
+        <img src="../images/ime-pict.png" alt="Imedia Sholem Shoukat">
         <h3>Imedia Sholem Shoukat</h3>
         <p>UI & UX Designer</p>
       </div>
     </div>
   </section>
-
   <!-- Footer -->
-   
+  <?php include_once __dir__ . "/footer.php";?>
+  
+  <script>
+        function cariFokus() {
+            window.location.href = "?focus=true"
+        }
+        function gakFokus() {
+            window.location.href = "?focus=false"
+        }
+    </script>
 </body>
 </html>
