@@ -39,7 +39,7 @@ Untuk melihat demo aplikasi, Anda dapat mengunjungi
 5. Impor file database ke MySQL:
    - Buka phpMyAdmin.
    - Buat database baru.
-   - Impor file SQL yang ada di folder `database/`.
+   - Impor file SQL.
 6. Buka browser dan akses aplikasi melalui URL:
    ```
    http://localhost/projek-jepang
