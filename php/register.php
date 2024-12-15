@@ -19,47 +19,59 @@ $username = "";
 $password = "";
 $confirm_password = "";
 
-// Handle form submission
+if (isset($_SESSION['id'])) {
+    header("Location: ../html/home.php");
+    exit();
+} 
+
 if (isset($_POST['submit'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
     $confirm_password = trim($_POST['confirm']);
 
-    // Validate input
-    if (empty($username) || empty($password) || empty($confirm_password)) {
-        $err .= "<li>Semua field harus diisi.</li>";
-    } elseif ($password !== $confirm_password) {
-        $err .= "<li>Password dan konfirmasi password tidak cocok.</li>";
+    // Password validation pattern
+    $pattern = "/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/";
+
+    if (!preg_match($pattern, $password)) {
+        echo "<script>alert('Password must be at least 8 characters long, include at least one uppercase letter, and one number.');</script>";
+        exit();
     } else {
-        // Check if username already exists
-        $stmt = $koneksi->prepare("SELECT * FROM login WHERE username = ?");
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        // Prepare statement to prevent SQL injection
+        $stmt = mysqli_prepare($koneksi, "SELECT * FROM login WHERE username = ?");
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
 
-        if ($result->num_rows > 0) {
-            $err .= "Username sudah terdaftar. Silakan pilih username lain.";
+        if (mysqli_num_rows($result) > 0) {
+            echo "<script>alert('Account is already registered.');</script>";
         } else {
-            // Hash the password
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            // Check if passwords match
+            if ($password === $confirm_password) {
+                // Hash the password using md5
+                $hashed_password = md5($password);
 
-            // Insert new user into the database
-            $stmt = $koneksi->prepare("INSERT INTO login (username, password) VALUES (?, ?)");
-            $stmt->bind_param("ss", $username, $hashed_password);
+                // Insert the hashed password into the database
+                $stmt = mysqli_prepare($koneksi, "INSERT INTO login (username, password) VALUES (?, ?)");
+                mysqli_stmt_bind_param($stmt, "ss", $username, $hashed_password);
+                if (mysqli_stmt_execute($stmt)) {
+                    echo "<script>alert('Registration successful!');</script>";
+                    header("Location: login.php");
+                    exit();
+                } else {
+                    echo "<script>alert('Error occurred during registration.');</script>";
+                }
 
-            if ($stmt->execute()) {
-                // Registration successful
-                header("Location: login.php"); // Redirect to login page
-                exit();
+                mysqli_stmt_close($stmt);
             } else {
-                $err .= "<li>Terjadi kesalahan saat mendaftar. Silakan coba lagi.</li>";
+                echo "<script>alert('Password confirmation does not match.');</script>";
             }
         }
-        $stmt->close();
+
+        // Close the prepared statement and database connection
+        mysqli_stmt_close($stmt);
+        mysqli_close($koneksi);
     }
 }
-
-mysqli_close($koneksi);
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +80,7 @@ mysqli_close($koneksi);
     <title>Register Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/register.css">
 </head>
 <body>
@@ -76,7 +88,7 @@ mysqli_close($koneksi);
         <div class="left-side">
             <div class="reg-div">
                 <span id="judul">REGISTER</span>
-                <form class="form-reg" action="POST">
+                <form class="form-reg" action="" method="POST">
                     <div class="input-group">
                         <img id="user-logo" src="../images/profil-logo.png" alt="">
                         <img class="line" src="../images/line-login.png" alt="">
@@ -92,7 +104,7 @@ mysqli_close($koneksi);
                         <img id="conf-logo" src="../images/pass-logo.png" alt="">
                         <img id="line-conf" class="line" src="../images/line-login.png" alt="">
                         <input id="conf-input" type="password" name="confirm" placeholder="Re-enter your password" required>
-                        <img id="eye-conf" class="eye-close" src="../images/eye-close.png" alt="">
+ <img id="eye-conf" class="eye-close" src="../images/eye-close.png" alt="">
                     </div>
                     <div class="below">
                         <div>

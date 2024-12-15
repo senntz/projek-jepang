@@ -1,78 +1,69 @@
 <?php 
 session_start();
 
-// Database connection
-$host_db = "localhost";
-$user_db = "root";
-$pass_db = "";
-$nama_db = "login";
-$koneksi = mysqli_connect($host_db, $user_db, $pass_db, $nama_db);
+//atur koneksi ke database
+$host_db    = "localhost";
+$user_db    = "root";
+$pass_db    = "";
+$nama_db    = "login";
+$koneksi    = mysqli_connect($host_db,$user_db,$pass_db,$nama_db);
+//atur variabel
+$err        = "";
+$username   = "";
+$ingataku   = "";
 
-// Initialize variables
-$err = "";
-$username = "";
-$ingataku = "";
-
-// Check for cookies
-if (isset($_COOKIE['cookie_username'])) {
+if(isset($_COOKIE['cookie_username'])){
     $cookie_username = $_COOKIE['cookie_username'];
     $cookie_password = $_COOKIE['cookie_password'];
 
-    $sql1 = "SELECT * FROM login WHERE username = '$cookie_username'";
-    $q1 = mysqli_query($koneksi, $sql1);
-    $r1 = mysqli_fetch_array($q1);
-    if ($r1['password'] == $cookie_password) {
+    $sql1 = "select * from login where username = '$cookie_username'";
+    $q1   = mysqli_query($koneksi,$sql1);
+    $r1   = mysqli_fetch_array($q1);
+    if($r1['password'] == $cookie_password){
         $_SESSION['session_username'] = $cookie_username;
         $_SESSION['session_password'] = $cookie_password;
     }
 }
 
-// Redirect if already logged in
-if (isset($_SESSION['session_username'])) {
-    header("location:index.php"); 
+if(isset($_SESSION['session_username'])){
+    header("location:index.php");
     exit();
 }
 
-// Handle login form submission
-if (isset($_POST['login'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $ingataku = isset($_POST['ingataku']) ? $_POST['ingataku'] : '';
+if(isset($_POST['login'])){
+    $username   = $_POST['username'];
+    $password   = $_POST['password'];
+    $ingataku   = $_POST['ingataku'];
 
-    // Validate input
-    if ($username == '' || $password == '') {
+    if($username == '' or $password == ''){
         $err .= "<li>Silakan masukkan username dan juga password.</li>";
-    } else {
-        // Fetch user data
-        $sql1 = "SELECT * FROM login WHERE username = ?";
-        $stmt = $koneksi->prepare($sql1);
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $r1 = $result->fetch_assoc();
+    }else{
+        $sql1 = "select * from login where username = '$username'";
+        $q1   = mysqli_query($koneksi,$sql1);
+        $r1   = mysqli_fetch_array($q1);
 
-        if (!$r1) {
+        if($r1['username'] == ''){
             $err .= "<li>Username <b>$username</b> tidak tersedia.</li>";
-        } elseif (!password_verify($password, $r1 ['password'])) {
-            $err .= "Password yang dimasukkan tidak sesuai.";
+        }elseif($r1['password'] != md5($password)){
+            $err .= "<li>Password yang dimasukkan tidak sesuai.</li>";
         }       
+        
+        if(empty($err)){
+            $_SESSION['session_username'] = $username; //server
+            $_SESSION['session_password'] = md5($password);
 
-        if (empty($err)) {
-            $_SESSION['session_username'] = $username; // Store username in session
-
-            if ($ingataku == 1) {
+            if($ingataku == 1){
                 $cookie_name = "cookie_username";
                 $cookie_value = $username;
                 $cookie_time = time() + (60 * 60 * 24 * 30);
-                setcookie($cookie_name, $cookie_value, $cookie_time, "/");
+                setcookie($cookie_name,$cookie_value,$cookie_time,"/");
 
                 $cookie_name = "cookie_password";
-                $cookie_value = $r1['password']; // Store hashed password
+                $cookie_value = md5($password);
                 $cookie_time = time() + (60 * 60 * 24 * 30);
-                setcookie($cookie_name, $cookie_value, $cookie_time, "/");
+                setcookie($cookie_name,$cookie_value,$cookie_time,"/");
             }
             header("location:index.php");
-            exit();
         }
     }
 }
@@ -81,9 +72,7 @@ if (isset($_POST['login'])) {
 <html>
 <head>
     <title>Login Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
@@ -97,8 +86,8 @@ if (isset($_POST['login'])) {
         </div>
         <div class="right-side">
             <div class="login-div">
-                <span id="judul">LOGIN</span>
-                <form class="form-login" method="POST">
+                <h2>LOGIN</h2>
+                <form class="form-login" action="" method="POST" role="form">
                     <div class="input-group">
                         <img id="user-logo" src="../images/profil-logo.png" alt="">
                         <img class="line" src="../images/line-login.png" alt="">
