@@ -17,7 +17,7 @@ all-JAPAN adalah platform informasi wisata yang dirancang untuk membantu wisataw
 4. PHP, sebagai bahasa pemrograman server-side untuk mengelola logika aplikasi dan komunikasi dengan database.
 5. MySql, sebagai database untuk menyimpan data seperti informasi tempat wisata, pengguna, dan artikel.
 6. Visual Studio Code, editor kode, untuk pengembangan aplikasi.
-7. Xampp/Laragon, untuk menjalankan server lokal
+7. Xampp, untuk menjalankan server lokal
 8. Git, untuk membantu tim melacak perubahan kode dan berkolaborasi secara efektif.
 
 ## Struktur Project 🗂
