@@ -12,15 +12,6 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/index.css">
-    <script>
-        function cariFokus() {
-            window.location.href = "?focus=true"
-        }
-        function gakFokus() {
-            window.location.href = "?focus=false"
-            window.location.href = "pencarian.php"
-        }
-    </script>
 </head>
 <body>
     <div id="navbar">
@@ -74,5 +65,15 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
         <a href="destination.php">See more</a>
     </div>
     <?php include_once __dir__ . "/footer.php";?>
+
+    <script>
+        function cariFokus() {
+            window.location.href = "?focus=true"
+        }
+        function gakFokus() {
+            window.location.href = "?focus=false"
+            window.location.href = "pencarian.php"
+        }
+    </script>
 </body>
 </html>
