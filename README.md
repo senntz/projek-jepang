@@ -1,6 +1,6 @@
 deskripsi project praktikum pemrograman web semester 3
 # all-JAPAN
-## Deskripsi Aplikasi 🇯🇵
+### Deskripsi Aplikasi 🇯🇵
 all-JAPAN adalah platform informasi wisata yang dirancang untuk membantu wisatawan lokal maupun internasional dalam mengeksplorasi keindahan Jepang. Kami menyajikan panduan komprehensif tentang destinasi terbaik, serta pengalaman budaya otentik. Misi kami adalah menjadikan perjalanan Anda lebih bermakna dengan memberikan informasi terpercaya yang menginspirasi.
 
 ## Fitur Aplikasi 📲
