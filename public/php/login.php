@@ -1,13 +1,8 @@
 <?php 
 session_start();
 
-//atur koneksi ke database
-$host_db    = "localhost";
-$user_db    = "root";
-$pass_db    = "";
-$nama_db    = "login";
-$koneksi    = mysqli_connect($host_db,$user_db,$pass_db,$nama_db);
-//atur variabel
+include("koneksi.php");
+
 $err        = "";
 $username   = "";
 $ingataku   = "";
@@ -19,7 +14,7 @@ if(isset($_COOKIE['cookie_username'])){
     $sql1 = "select * from login where username = '$cookie_username'";
     $q1   = mysqli_query($koneksi,$sql1);
     $r1   = mysqli_fetch_array($q1);
-    if($r1['password'] == $cookie_password){
+    if(password_verify($cookie_password, $r1['password'])){
         $_SESSION['session_username'] = $cookie_username;
         $_SESSION['session_password'] = $cookie_password;
     }
@@ -40,17 +35,20 @@ if(isset($_POST['login'])){
     }else{
         $sql1 = "select * from login where username = '$username'";
         $q1   = mysqli_query($koneksi,$sql1);
-        $r1   = mysqli_fetch_array($q1);
+        $r1   = mysqli_fetch_array(result: $q1);
 
         if($r1['username'] == ''){
             $err .= "<li>Username <b>$username</b> tidak tersedia.</li>";
-        }elseif($r1['password'] != md5($password)){
+        }elseif(password_verify($password, $r1['password'])){
+            
+        }else{
             $err .= "<li>Password yang dimasukkan tidak sesuai.</li>";
         }       
         
         if(empty($err)){
+            $_SESSION['session_id'] = $r1['id'];
             $_SESSION['session_username'] = $username; //server
-            $_SESSION['session_password'] = md5($password);
+            $_SESSION['session_password'] = $password;
 
             if($ingataku == 1){
                 $cookie_name = "cookie_username";
@@ -59,14 +57,16 @@ if(isset($_POST['login'])){
                 setcookie($cookie_name,$cookie_value,$cookie_time,"/");
 
                 $cookie_name = "cookie_password";
-                $cookie_value = md5($password);
+                $cookie_value = $password;
                 $cookie_time = time() + (60 * 60 * 24 * 30);
                 setcookie($cookie_name,$cookie_value,$cookie_time,"/");
             }
             if ($r1['role'] == "admin") {
-                # code...
+                header("location:admin.php");
+            } else {
+                header("location:home.php");
             }
-            header("location:home.php");
+            
         }
     }
 }
@@ -83,13 +83,13 @@ if(isset($_POST['login'])){
         <div class="left-side">
             <div class="left-content">
                 <img id="logo" src="..\\images\\logo-putih.png" alt="">
-                <p>"Jika belum memiliki akun, ayo bergabung dan mulai jurnal anda."</p>
+                <p>"Jika belum memiliki akun,</br> ayo bergabung dan mulai jurnal anda."</p>
                 <a href="register.php" id="daftar-btn">Daftar</a>
             </div>
         </div>
         <div class="right-side">
             <div class="login-div">
-                <h2>LOGIN</h2>
+                <span id="judul">LOGIN</span>
                 <form class="form-login" action="" method="POST" role="form">
                     <div class="input-group">
                         <img id="user-logo" src="../images/profil-logo.png" alt="">

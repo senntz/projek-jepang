@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
 

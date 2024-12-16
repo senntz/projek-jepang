@@ -227,16 +227,21 @@ nav a {
     margin-top: 7px;
 }
 
-.upper-banner button {
+#explore-btn {
     width: 139px;
     height: 45px;
     border-radius: 20px;
+    background-color: white;
     border: transparent;
     font-weight: bold;
     font-size: 17px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    line-height: 43px;
 }
 
-.upper-banner button:hover {
+#explore-btn:hover {
     background-color: transparent;
     border: 2px solid white;
     color: white;
@@ -364,12 +369,14 @@ nav a {
     gap: 5.96px;
 }
 
-.content-judul span {
+.judul {
     font-size: 23.84px;
     font-weight: bold;
     text-align: left;
     width: auto;
     height: 29px;
+    text-decoration: none;
+    color: black;
 }
 
 .content-judul img {
@@ -397,7 +404,7 @@ nav a {
     height: 28.74px;
 }
 
-.content-container a {
+#see-btn {
     width: 255px;
     margin-top: 56px;
     color: black;

@@ -1,8 +1,6 @@
 <?php
-session_start(); // Ensure session is started
-
 // Check if the user is logged in
-$isLoggedIn = isset($_SESSION["id"]); // Assuming "id" is set when the user logs in
+$isLoggedIn = isset($_SESSION['session_id']); // Assuming "id" is set when the user logs in
 ?>
 
 <header>
@@ -13,7 +11,7 @@ $isLoggedIn = isset($_SESSION["id"]); // Assuming "id" is set when the user logs
         <a href="about.php" id="nav-abt">About</a>
     </nav>
     <div class="nav-btn">
-        <!-- Search functionality -->
+    <?php if ($isLoggedIn): ?>
         <div id="search">
             <?php if ($isFocused): ?>
                 <form action="pencarian.php" method="POST">
@@ -26,7 +24,11 @@ $isLoggedIn = isset($_SESSION["id"]); // Assuming "id" is set when the user logs
         </div>
         <a href="profile.php" id="profile-btn">
             <img id="profil-pic" src="..\\images\\profile-pic.png" alt="">
-            <span>Nama Profil</span>
+            <?php
+                echo '
+                    <span>'.$_SESSION['session_username'].'</span>
+                '
+            ?>
         </a>
         <a href="logout.php" id="logout-btn">
             <div class="logout-logo"></div>
@@ -34,7 +36,7 @@ $isLoggedIn = isset($_SESSION["id"]); // Assuming "id" is set when the user logs
         </a>
 
         <!-- Show Daftar and Masuk buttons only if the user is not logged in -->
-        <?php if (!$isLoggedIn): ?>
+        <?php else: ?>
             <a href="register.php" id="daftar-btn">
                 <div class="daftar-logo"></div>
                 <span>Daftar</span>

@@ -14,4 +14,4 @@ $cookie_value = "";
 $time = time() - (60 * 60);
 setcookie($cookie_name,$cookie_value,$time,"/");
 
-header("location:login.php");
+header("location:home.php");

@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+include("koneksi.php");
 
 $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
 ?>
@@ -22,7 +25,7 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
             <div>
                 <img src="../images/JEPANG.png" alt="">
                 <p>Temukan rekomendasi destinasi wisata, budaya, makanan, dan apapun yang berkaitan dengan jepang</p>
-                <button>Explore</button>
+                <a href="destination.php" id="explore-btn">Explore</a>
             </div>
         </div>
         <div class="bottom-banner">
@@ -45,24 +48,36 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
     <div class="content-container">
         <span>Top Destination</span>
         <div id="content">
-            <div class="content-wrap">
+            
                 <!-- buat bek en looping katalog -->
-                <img src="..\\images\\tokyo-dome.png" alt="">   <!--  ini gambar tempat  -->
-                <div class="content-name">
-                    <div class="content-judul">
-                        <span>Tokyo Dome</span>  <!--  ini nama judul / nama tempat  -->
-                        <img src="..\\images\\content-judul.png" alt="">
-                    </div>
-                    <p>Prasarana serba guna untuk segala cuaca</p>  <!--  ini keterangan tempat  -->
-                </div>
-                <div class="content-share">
-                    <img src="..\\images\\bookmark-icon.png" alt="" class="bookmark-icon">
-                    <img src="..\\images\\like-icon.png" alt="" class="like-icon">
-                    <img src="..\\images\\share-icon.png" alt="" class="share-icon">
-                </div>
-            </div>
+                <?php
+                    $result = mysqli_query($koneksi, "SELECT * FROM katalog ORDER BY jumlah_like DESC LIMIT 6");
+
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($data = mysqli_fetch_assoc($result)) {
+                            echo '
+                                <div class="content-wrap">
+                                    <img src="data:image/jpeg;base64,' . base64_encode($data['gambar_katalog']) . '" alt="' . $data['nama_tempat'] . '"/>   <!--  ini gambar tempat  -->
+                                    <div class="content-name">
+                                        <div class="content-judul">
+                                            <a href="post.php?id='.$data['id'].'" class="judul">'.$data['nama_tempat'].'</a>  <!--  ini nama judul / nama tempat  -->
+                                            <img src="..\\images\\content-judul.png" alt="">
+                                        </div>
+                                        <p>'.$data['deskripsi'].'</p>  <!--  ini keterangan tempat  -->
+                                    </div>
+                                    <div class="content-share">
+                                        <img src="..\\images\\bookmark-icon.png" alt="" class="bookmark-icon">
+                                        <img src="..\\images\\like-icon.png" alt="" class="like-icon">
+                                        <img src="..\\images\\share-icon.png" alt="" class="share-icon">
+                                    </div>
+                                </div>
+                            ';
+                        }
+                    }
+                            
+                ?>
         </div>
-        <a href="destination.php">See more</a>
+        <a href="destination.php" id="see-btn">See more</a>
     </div>
     <?php include_once __dir__ . "/footer.php";?>
 
@@ -72,7 +87,6 @@ $isFocused = isset($_GET['focus']) && $_GET['focus'] === 'true';
         }
         function gakFokus() {
             window.location.href = "?focus=false"
-            window.location.href = "pencarian.php"
         }
     </script>
 </body>

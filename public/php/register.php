@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-// Database connection
-$host_db = "localhost";
-$user_db = "root";
-$pass_db = "";
-$nama_db = "login";
-$koneksi = mysqli_connect($host_db, $user_db, $pass_db, $nama_db);
+include("koneksi.php");
 
 // Check connection
 if (!$koneksi) {
@@ -20,45 +15,46 @@ $password = "";
 $confirm_password = "";
 
 if (isset($_POST['submit'])) {
-    $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
-    $confirm_password = trim($_POST['confirm']);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm'];
 
     // Password validation pattern
     $pattern = "/^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/";
 
     if (!preg_match($pattern, $password)) {
-        echo "<script>alert('Password must be at least 8 characters long, include at least one uppercase letter, and one number.');</script>";
-        exit();
+        echo "<script>alert('Password harus 8 karakter, memiliki minimal 1 huruf besar, dan 1 angka.');</script>";
+        header("Location:register.php");
     } else {
         // Prepare statement to prevent SQL injection
-        $stmt = mysqli_prepare($koneksi, "SELECT * FROM login WHERE username = ?");
+        $stmt = mysqli_prepare($koneksi, "SELECT username, password FROM login WHERE username = ?");
         mysqli_stmt_bind_param($stmt, "s", $username);
         mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
+        $result = mysqli_stmt_bind_result($stmt, $db_username, $db_password);
 
         if (mysqli_num_rows($result) > 0) {
-            echo "<script>alert('Account is already registered.');</script>";
+            echo "<script>alert('Akun sudah terdaftar!.');</script>";
+            header("Location:register.php");
         } else {
             // Check if passwords match
             if ($password === $confirm_password) {
-                // Hash the password using md5
-                $hashed_password = md5($password);
+                $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
                 // Insert the hashed password into the database
                 $stmt = mysqli_prepare($koneksi, "INSERT INTO login (username, password) VALUES (?, ?)");
                 mysqli_stmt_bind_param($stmt, "ss", $username, $hashed_password);
                 if (mysqli_stmt_execute($stmt)) {
-                    echo "<script>alert('Registration successful!');</script>";
-                    header("Location: login.php");
-                    exit();
+                    echo "<script>alert('Registrasi Berhasi!');</script>";
+                    header("Location:login.php");
                 } else {
-                    echo "<script>alert('Error occurred during registration.');</script>";
+                    echo "<script>alert('Registrasi Error! Harap coba lagi.');</script>";
+                    header("Location:register.php");
                 }
 
                 mysqli_stmt_close($stmt);
             } else {
-                echo "<script>alert('Password confirmation does not match.');</script>";
+                echo "<script>alert('Password tidak sama!');</script>";
+                header("Location:register.php");
             }
         }
 
@@ -99,7 +95,7 @@ if (isset($_POST['submit'])) {
                         <img id="conf-logo" src="../images/pass-logo.png" alt="">
                         <img id="line-conf" class="line" src="../images/line-login.png" alt="">
                         <input id="conf-input" type="password" name="confirm" placeholder="Re-enter your password" required>
- <img id="eye-conf" class="eye-close" src="../images/eye-close.png" alt="">
+                        <img id="eye-conf" class="eye-close" src="../images/eye-close.png" alt="">
                     </div>
                     <div class="below">
                         <div>
@@ -147,7 +143,7 @@ if (isset($_POST['submit'])) {
         <div class="right-side">
             <div class="right-content">
                 <img id="logo" src="..\\images\\logo-putih.png" alt="">
-                <p>"Jika anda sudah memiliki akun, masuk dan nikmati fitur fitur yang kami sediakan"</p>
+                <p>"Jika anda sudah memiliki akun,</br> masuk dan nikmati fitur fitur yang kami sediakan"</p>
                 <a href="login.php" id="masuk-btn">Masuk</a>
             </div>
         </div>
